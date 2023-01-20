@@ -1,0 +1,13 @@
+use ethereum_types::{U256, Address};
+use web3::contract::{Contract, Options};
+use web3::futures::Future;
+
+fn exchange_tokens(contract: &Contract<web3::transports::Http>,
+                   from: Address,
+                   to: Address,
+                   value: U256) -> impl Future<Item=(), Error=web3::Error> {
+
+    let options = Options::default();
+
+    contract.execute("transfer", (to, value), from, options)
+}
