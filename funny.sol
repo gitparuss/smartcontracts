@@ -2,7 +2,7 @@ pragma solidity ^0.8.0;
 
 contract Compliments {
     address owner;
-    uint256 complimentPrice = 0.01 ether;
+    uint256 complimentPrice = 0.015 ether;
     
     constructor() {
         owner = msg.sender;
